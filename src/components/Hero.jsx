@@ -12,14 +12,18 @@ const Hero = () => {
                         <p>Frond-End Developer Experienced in HTML, CSS, JavaScript and Using Frameworks such as React.js to Produce User-friendly and Responsive Websites.</p>
                     </TextWrapper>
                     <Buttons>
-                        <Btn>
-                            <h1>Contact Me</h1>
-                            <GoArrowUpRight />
-                        </Btn>
-                        <Btn>
-                            <h1>View my CV</h1>
-                            <GoArrowUpRight />
-                        </Btn>
+                        <a href="#contact">
+                            <Btn>
+                                <h1>Contact Me</h1>
+                                <GoArrowUpRight />
+                            </Btn>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1x1TBlPqhlUgrVW0LPgO1bOM9HO3_XGD5/view?usp=sharing" target="_blank">
+                            <Btn>
+                                <h1>View my CV</h1>
+                                <GoArrowUpRight />
+                            </Btn>
+                        </a>
                     </Buttons>
                 </TextBox>
                 <ImageBox>
@@ -100,6 +104,15 @@ const Buttons = styled.div`
 display: flex;
 gap: 20px;
 
+a{
+    color: black;
+    text-decoration: none;
+}
+/* a:hover{
+    background-color: black;
+    color: rgb(247, 247, 247);
+} */
+
 @media (max-width: 768px) {
     /* justify-content: center; */
 }`
@@ -112,6 +125,12 @@ padding: 8px;
 border-radius: 8px;
 display: flex;
 align-items: center;
+
+&:hover{
+    background-color: black;
+    color: rgb(247, 247, 247);
+}
+
 h1{
     font-size: 16px;
     font-weight: 400;
@@ -144,5 +163,7 @@ img{
     width: 100%;
     /* width: 340px; */
     border-radius: 50%;
+    /* opacity: 0.4;
+    z-index: -1; */
 }    
 `

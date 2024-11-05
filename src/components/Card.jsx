@@ -17,10 +17,10 @@ const Card = (props) => {
                     </TextWrapper>
                     <Buttons>
                         <Btn>
-                            <a href= {props.live}>Live View<GoArrowUpRight /></a>
+                            <a href= {props.live} target="_blank">Live View<GoArrowUpRight /></a>
                         </Btn>
                         <Btn>
-                            <a href= {props.github}>View on Github<GoArrowUpRight /></a>
+                            <a href= {props.github} target="_blank" >View on Github<GoArrowUpRight /></a>
                         </Btn>
                     </Buttons>
                 </TextBox>
@@ -141,7 +141,7 @@ display: flex;
 gap: 10px;`
 
 const Btn = styled.div`
-
+cursor: pointer;
 a{
     /* border: 1px solid black; */
     color: rgb(204, 204, 204);

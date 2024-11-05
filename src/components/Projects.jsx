@@ -18,12 +18,13 @@ const Projects = () => {
                     </TextWrapper>
                 </TextBox>
                 <CardBox>
-                    <Card image={Snap} title="Snap" detail="User-friendly and responsive website built using HTML and CSS and made interactive with JavaScript." github="https://github.com/lashe1106/Snap" />
-                    <Card image={Funiro} title="Funiro" detail="E-commerce website with immersive layout built using HTML and CSS while utilizing figma to implement styles." github="https://github.com/lashe1106/Funiro" />
-                    <Card image={Nexcent} title='Nexcent' detail="Structured website with immersive layout built using HTML and CSS while utilizing figma to implement styles" github="https://github.com/lashe1106/Nexcent" />
+                    <Card image={Snap} title="Snap" detail="User-friendly and responsive website built using HTML and CSS and made interactive with JavaScript." live="https://snap-eight-bay.vercel.app/" github="https://github.com/lashe1106/Snap" />
+                    <Card image={Funiro} title="Funiro" detail="E-commerce website with immersive layout built using HTML and CSS while utilizing figma to implement styles." live="https://funiro-theta.vercel.app/" github="https://github.com/lashe1106/Funiro" />
+                    <Card image={Nexcent} title='Nexcent' detail="Structured website with immersive layout built using HTML and CSS while utilizing figma to implement styles" live="https://nexcent-plum.vercel.app/" github="https://github.com/lashe1106/Nexcent" />
                     <Card image={Kuda} title="Kuda-Clone" detail="Kuda landing page replica built with react.js tocreate dynamic user interfaces." live="https://kuda-react-hclrg5dvg-owonubi-toluwalases-projects.vercel.app/" github="https://github.com/lashe1106/Kuda-React/tree/main" />
-                    <Card image={Countries} title="Rest-Countries-API" detail="Website developed to searc and filter through countries with data fetched from API and built while utilizing JavaScript." github="https://github.com/lashe1106/Rest-Countries-with-API" />
-                    <Card image={Product} title="Product-List-Cart" detail="Interactive web layout with products and a cart that gets the total price built while implementing JavaScript." github="https://github.com/lashe1106/Product-list-with-cart" />
+                    <Card image={Countries} title="Rest-Countries-API" detail="Website developed to searc and filter through countries with data fetched from API and built while utilizing JavaScript." live="https://rest-countries-with-api.vercel.app/" github="https://github.com/lashe1106/Rest-Countries-with-API" />
+                    <Card image={Product} title="Product-List-Cart" detail="Interactive web layout with products and a cart that gets the total price built while implementing JavaScript."
+                    live="https://product-list-with-cart-drab.vercel.app/" github="https://github.com/lashe1106/Product-list-with-cart" />
                 </CardBox>
             </Wrapper>
         </Container>

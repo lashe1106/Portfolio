@@ -4,8 +4,28 @@ import { IoLogoLinkedin } from "react-icons/io"
 import { IoLocation } from "react-icons/io5"
 import { MdEmail, MdPhone } from "react-icons/md"
 import styled from "styled-components"
+import {useState} from "react"
 
 const Contact = () => {
+    const [fillName, setFillName] = useState("")
+    const [email, setEmail] = useState("")
+    const [subject, setSubject] = useState("")
+    const [message, setMessage] = useState("")
+    const [contactData, setContactData] = useState([])
+    
+    const fillForm = (e) => {
+        e.preventDefault()
+
+        setContactData([...contactData, { fillName, email, subject, message }])
+
+        setFillName("")
+        setEmail("")
+        setSubject("")
+        setMessage("")
+    }
+
+    // console.log(contactData);
+    
     return (
         <Container>
             <Wrapper>
@@ -36,9 +56,9 @@ const Contact = () => {
                             </div>
                         </ContactWrapper>
                         <Media>
-                            <a href="https://github.com/lashe1106"><AiOutlineGithub size={25} /></a>
-                            <a href="https://x.com/suzie_lashe"><IoLogoLinkedin size={25} /></a>
-                            <a href="https://x.com/suzie_lashe"><FaXTwitter size={25} /></a>
+                            <a href="https://github.com/lashe1106" target="_blank"><AiOutlineGithub size={25} /></a>
+                            <a href="https://x.com/suzie_lashe" target="_blank"><IoLogoLinkedin size={25} /></a>
+                            <a href="https://x.com/suzie_lashe" target="_blank"><FaXTwitter size={25} /></a>
                         </Media>
                     </SubTextBox>
                     <FormBox>
@@ -47,7 +67,7 @@ const Contact = () => {
                             <p>Hey! let's connect. Fill out the form below.</p>
                         </FormText>
                         
-                        <form action="">
+                        <form action="" onSubmit={fillForm}>
                             <main>
                                 <div>
                                     <label  htmlFor="name">Name:</label>
@@ -56,10 +76,10 @@ const Contact = () => {
                                     <label htmlFor="message">Message:</label>
                                 </div>
                                 <div>
-                                    <input type="text" id="name" name="name" />
-                                    <input type="email" id="email" name="email" />
-                                    <input type="text" id="subject" name="subject" />
-                                    <textarea id="message" name="message"  />
+                                    <input type="text" id="name" name="name" value={fillName} onChange={ (e) => {setFillName(e.target.value)} } required />
+                                    <input type="email" id="email" name="email" value={email} onChange={(e) => { setEmail(e.target.value) }} required />
+                                    <input type="text" id="subject" name="subject" value={subject} onChange={(e) => { setSubject(e.target.value) }} required />
+                                    <textarea id="message" name="message" value={message} onChange={(e) => { setMessage(e.target.value) }} required />
                                 </div>
                             </main>
                             
@@ -138,6 +158,7 @@ margin-top: 40px;
 
 const SubTextBox = styled.div`
 width: 22%;
+margin: 0 auto;
 /* border: 1px solid black; */
 @media (max-width: 768px) {
     width: 100%;
@@ -183,6 +204,7 @@ div{
     align-items: center;
     gap: 5px;
     /* border: 1px solid black; */
+    word-break: break-all;
 }
 a{
     color: rgb(204, 204, 204);
@@ -236,10 +258,11 @@ form{
     flex-direction: column;
 
     @media (max-width: 768px) {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        /* justify-content: center;
+        align-items: center; */
         /* border: 1px solid black; */
     }
     main{
@@ -257,8 +280,13 @@ form{
         font-weight: 400;
         line-height: 24px;
 
+        &:last-child{
+            width: 65%;
+            /* border: 1px solid black; */
+        }
+
         input{
-            width: 191px;
+            /* width: 100%; */
             padding: 10px;
             margin-top: 10px;
             outline: none;
@@ -268,6 +296,7 @@ form{
             color: #000;
         }
         textarea{
+            /* width: 100%; */
             padding: 10px;
             margin-top: 10px;
             outline: none;
@@ -290,6 +319,12 @@ form{
         background-color: transparent;
         border: 1px solid black;
         border-radius: 8px;
+        cursor: pointer;
+
+        &:hover{
+            background-color: black;
+            color: rgb(247, 247, 247);
+        }
     
     }
 }
